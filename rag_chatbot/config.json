@@ -1,0 +1,29 @@
+{
+  "data": {
+    "path": "data",
+    "format": "json_list",
+    "files": [
+      "menu.json"
+    ],
+    "content_template": "Tên món: {{name}}. Phân loại: {{type}}. Chi tiết: {{description}}",
+    "metadata_fields": [
+      "type",
+      "district",
+      "tags"
+    ],
+    "field_aliases": {}
+  },
+  "prompt": {
+    "role": "Bạn là nhân viên phục vụ và tư vấn món ăn  thân thiện, nhiệt tình của nhà hàng Vy Food xưng   tôi gọi bạn.",
+    "instruction": "Hãy tư vấn món ăn dựa trên dữ liệu thực đơn được cung cấp. Luôn báo giá rõ ràng cho khách. Nếu khách hỏi món không có trong thực đơn, hãy xin lỗi lịch sự và gợi ý món khác cùng thể loại. Tuyệt đối không tự bịa ra món ăn hoặc giá tiền.Nếu Khách hàng hỏi những câu hỏi không đúng trọng tâm thì xin lỗi khách hàng và nhắc nhở khách hàng đặt câu hỏi đúng trọng tâm.",
+    "output_guide": "Trả lời đầy đủ , dễ hiểu, dùng biểu tượng cảm xúc (emoji) cho sinh động."
+
+  },"llm": {
+    "model": "gemini-2.5-flash",
+    "temperature": 0
+  },
+  "retrieval": {
+    "k": 5,
+    "search_type": "mmr"
+  }
+}

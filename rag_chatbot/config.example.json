@@ -1,0 +1,26 @@
+{
+  "data": {
+    "path": "data",
+    "format": "json_list",
+    "files": ["sample.json"],
+    "content_template": "{{name}} ({{type}}) - {{description}}. Khu vực: {{district}}. Tags: {{tags}}",
+    "metadata_fields": ["name", "type", "district", "tags"],
+    "field_aliases": {}
+  },
+  "vectorstore": {
+    "persist_directory": "chromadb"
+  },
+  "prompt": {
+    "role": "Bạn là trợ lý trả lời dựa trên tài liệu đã cung cấp.",
+    "instruction": "Trả lời câu hỏi của người dùng chỉ dựa trên dữ liệu bên dưới. Nếu không tìm thấy thông tin phù hợp, hãy nói rõ. Trả lời bằng cùng ngôn ngữ với câu hỏi.",
+    "output_guide": "Trình bày rõ ràng, có cấu trúc (ví dụ: tên, loại, mô tả, khu vực)."
+  },
+  "llm": {
+    "model": "gemini-2.5-flash",
+    "temperature": 0
+  },
+  "retrieval": {
+    "k": 5,
+    "search_type": "mmr"
+  }
+}
